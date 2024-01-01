@@ -7,12 +7,12 @@ local:
   root: <%= Rails.root.join("storage") %>
 
 
-amazon:
-  service: 'S3',
-  access_key_id: ENV['AKIAV6FCYVYSEYCSD24F'],
-  secret_access_key: ENV['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'],
-  region: 'ca-central-1',  # Supprimez les crochets autour de 'ca-central-1'
-  bucket: 'joachim-global-treks',
+# amazon:
+#   service: 'S3',
+#   access_key_id: ENV['AKIAV6FCYVYSEYCSD24F'],
+#   secret_access_key: ENV['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'],
+#   region: 'ca-central-1',  # Supprimez les crochets autour de 'ca-central-1'
+#   bucket: 'joachim-global-treks',
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
