@@ -1,2 +1,182 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joachim's Global Treks | Travel</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Joachim's Global Treks</a>
+
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-telegram'></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+
+        <nav class="navbar">
+            <a href="#">Destinations</a>
+            <a href="#">Booking</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="slider">
+            <div class="slide active">
+                <img src="<%= image_url('china.jpg') %>" alt="Description de l'image">
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Chi</h1>
+                    </div>
+                    <div class="content">
+                        <h3>01. Évasion en Forêt Chinoise</h3>
+                        <p>Découvrez les merveilles cachées des forêts chinoises avec notre 'China Forest Tour'. Entre sentiers sinueux et panoramas à couper le souffle, vivez une expérience unique au cœur d'un écosystème riche et préservé. Idéal pour les amoureux de nature et d'aventure, ce circuit offre une immersion fascinante dans un univers de verdure et de paix.</p>
+                        <a href="#" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>na</h1>
+                    <h3>Forest</h3>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="<%= image_url('japan.jpg') %>" alt="Description de l'image">
+
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Jap</h1>
+                    </div>
+                    <div class="content">
+                        <h3>02. Exploration des Forêts Japonaises</h3>
+                        <p>Participez à notre 'Japan Forest Tour' pour une immersion paisible dans les forêts verdoyantes du Japon. Un parcours enchanteur qui vous connecte à la nature et à l'essence tranquille du paysage japonais.</p>
+                        <a href="#" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>an</h1>
+                    <h3>Forest</h3>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="<%= image_url('africa.jpg') %>" alt="Description de l'image">
+
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Afr</h1>
+                    </div>
+                    <div class="content">
+                        <h3>03. Aventure en Forêt Africaine</h3>
+                        <p>LRejoignez notre 'Africa Forest Tour' pour une expérience saisissante au cœur des forêts luxuriantes africaines, un voyage à la découverte de paysages sauvages et d'une biodiversité exceptionnelle.</p>
+                        <a href="#" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>ica</h1>
+                    <h3>Forest</h3>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="<%= image_url('brazil.jpg') %>" alt="Description de l'image">
+
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Bra</h1>
+                    </div>
+                    <div class="content">
+                        <h3>04. Exploration de la Forêt Brésilienne</h3>
+                        <p>LDécouvrez les merveilles de la forêt tropicale brésilienne avec notre 'Brazil Forest Tour', une aventure captivante au cœur d'un écosystème vibrant et coloré.</p>
+                        <a href="#" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>zil</h1>
+                    <h3>Forest</h3>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="<%= image_url('serbia.jpg') %>" alt="Description de l'image">
+
+                <div class="left-info">
+                    <div class="penetrate-blur">
+                        <h1>Ser</h1>
+                    </div>
+                    <div class="content">
+                        <h3>05. Immersion en Forêt Serbe</h3>
+                        <p>Partez à la découverte des paysages pittoresques et de la richesse naturelle de la Serbie avec notre 'Serbia Forest Tour', une expérience inoubliable au cœur de ses forêts envoûtantes.</p>
+                        <a href="#" class="btn">More Details</a>
+                    </div>
+                </div>
+                <div class="right-info">
+                    <h1>bia</h1>
+                    <h3>Forest</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="prev-btn">
+                <i class='bx bx-chevron-left'></i>
+            </span>
+            <span class="next-btn">
+                <i class='bx bx-chevron-right'></i>
+            </span>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
+
+
+<script>
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+const slides = document.querySelectorAll('.slide');
+const numberOfSlides = slides.length;
+let slideNumber = 0;
+
+//slider next button
+nextBtn.onclick = () => {
+    slides.forEach((slide) => {
+        slide.classList.remove('active');
+    });
+
+    slideNumber++;
+
+    if (slideNumber > (numberOfSlides - 1)) {
+        slideNumber = 0;
+    }
+
+    slides[slideNumber].classList.add('active');
+}
+
+//slider prev button
+prevBtn.onclick = () => {
+    slides.forEach((slide) => {
+        slide.classList.remove('active');
+    });
+
+    slideNumber--;
+
+    if (slideNumber < 0) {
+        slideNumber = numberOfSlides - 1;
+    }
+
+    slides[slideNumber].classList.add('active');
+}
+console.log("salut")
+</script>
