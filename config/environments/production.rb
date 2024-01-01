@@ -49,13 +49,6 @@ Rails.application.configure do
   # config.force_ssl = true
 
   config.active_storage.service = :amazon
-config.active_storage.amazon = {
-  service: 'S3',
-  access_key_id: ENV['AKIAV6FCYVYSEYCSD24F'],
-  secret_access_key: ENV['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'],
-  region: 'ca-central-1',  # Supprimez les crochets autour de 'ca-central-1'
-  bucket: 'joachim-global-treks',
-}
 
 
   # Include generic and useful information about system operation, but avoid logging too much
